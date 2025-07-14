@@ -1,11 +1,13 @@
-import java.io.*;
-import java.util.*;
 
-public class ConnectFour extends TurnBasedGame {
+public class ConnectFour<T, Move> extends TurnBasedGame<T, Move> {
+    private static final int NUM_PLAYERS = 2;
     private char[][] gameState;
-    private Turn turn;
 
-    private static final BOARD_SIZE = 7;
+    private static final int BOARD_SIZE = 7;
+
+    private GameResult gameResult;
+    private T winner;
+    private T turn;
 
     public ConnectFour() {
         this.gameState = new char[BOARD_SIZE][BOARD_SIZE];
@@ -16,9 +18,28 @@ public class ConnectFour extends TurnBasedGame {
             }
         }
 
-        turn = Turn.P1;
     }
 
-    public static void main(String[] args) {
+    @Override
+    public GameResult getGameResult() {
+
+    }
+
+    @Override
+    public T getWinner() {
+
+    }
+
+    @Override
+    public T getTurn() {
+        return turn;
+    }
+
+    @Override
+    public void makeMove(Move m) {
+    }
+
+    public int getNumPlayers() {
+        return NUM_PLAYERS;
     }
 }
